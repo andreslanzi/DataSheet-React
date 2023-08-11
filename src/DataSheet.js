@@ -341,7 +341,7 @@ export default class DataSheet extends PureComponent {
         this.clearSelectedCells(start, end);
       } else if (currentCell && !currentCell.readOnly) {
         if (enterKeyPressed) {
-          this._setState({ editing: start, clear: {}, forceEdit: true });
+          this.handleNavigate(e, { i: e.shiftKey ? -1 : 1, j: 0 });
           e.preventDefault();
         } else if (
           numbersPressed ||
